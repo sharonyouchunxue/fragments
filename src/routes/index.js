@@ -12,7 +12,7 @@ const app = express();
 /**
  * Expose all of our API routes on /v1/* to include an API version.
  */
-router.use(`/v1`, require('./api'));
+//router.use(`/v1`, require('./api'));
 
 /**
  * Define a simple health check route. If the server is running
@@ -48,3 +48,11 @@ app.get('/', (req, res) => {
     });
   });
 
+// modifications to src/routes/index.js
+// Our authorization middleware
+const { authenticate } = require('../authentication');
+/**
+ * Expose all of our API routes on /v1/* to include an API version.
+ * Protect them all so you have to be authenticated in order to access.
+ */
+router.use(`/v1`, authenticate(), require('./api'));

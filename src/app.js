@@ -9,8 +9,6 @@ const helmet = require('helmet');
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const compression = require('compression');
 
-
-
 // version and author from our package.json file
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { version, author } = require('../package.json');
@@ -25,6 +23,16 @@ const pino = require('pino-http')({
 
 // Create an express app instance we can use to attach middleware and HTTP routes
 const app = express();
+
+// modifications to src/app.js
+const passport = require('passport');
+const authorization = require('./authentication');
+// Use gzip/deflate compression middleware
+app.use(compression());
+
+// Set up our passport authorization middleware
+passport.use(authorization.strategy());
+app.use(passport.initialize());
 
 // Use logging middleware
 app.use(pino);
