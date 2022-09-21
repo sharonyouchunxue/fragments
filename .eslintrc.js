@@ -20,7 +20,7 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
-        '@typescript-eslint/no-var-requires': 'off',
-        "no-unused-vars": "off",
+        '@typescript-eslint/no-var-requires': 'off'
+        
     }
 }
