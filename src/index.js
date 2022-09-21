@@ -1,7 +1,7 @@
 // src/index.js
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const unneededVariable = 'This variable is never used';
+
 // Read environment variables from an .env file (if present)
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 require('dotenv').config();
