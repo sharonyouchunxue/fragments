@@ -1,6 +1,8 @@
+const { off } = require("./src/app");
+
 module.exports = {
     "env": {
-        "browser": true,
+        "node": true,
         "commonjs": true,
         "es2021": true
     },
@@ -18,5 +20,7 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
+        '@typescript-eslint/no-var-requires': 'off',
+        "no-unused-vars": "off",
     }
 }
