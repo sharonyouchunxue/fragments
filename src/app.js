@@ -10,7 +10,7 @@ const helmet = require('helmet');
 const compression = require('compression');
 
 // version and author from our package.json file
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+// eslint-disable-next-line @typescript-eslint/no-var-requires, @typescript-eslint/no-unused-vars
 const { version, author } = require('../package.json');
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -25,7 +25,9 @@ const pino = require('pino-http')({
 const app = express();
 
 // modifications to src/app.js
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const passport = require('passport');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const authorization = require('./authentication');
 // Use gzip/deflate compression middleware
 app.use(compression());
@@ -54,6 +56,7 @@ app.use(compression());
 // Remove `app.get('/', (req, res) => {...});` and replace with:
 
 // Define our routes
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 app.use('/', require('./routes'));
 
 // Add 404 middleware to handle any requests for resources that can't be found
@@ -68,7 +71,7 @@ app.use((req, res) => {
 });
 
 // Add error-handling middleware to deal with anything else
-// eslint-disable-next-line no-unused-vars
+// eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
 app.use((err, req, res, next) => {
   // We may already have an error response we can use, but if not, use a generic
   // 500 server error and message.

@@ -1,13 +1,19 @@
+/* eslint-disable no-undef */
 // src/authentication.js
 
 // Configure a JWT token strategy for Passport based on
 // Identity Token provided by Cognito. The token will be
 // parsed from the Authorization header (i.e., Bearer Token).
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const passport = require('passport');
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const BearerStrategy = require('passport-http-bearer').Strategy;
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { CognitoJwtVerifier } = require('aws-jwt-verify');
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const logger = require('./logger');
 
 // Create a Cognito JWT Verifier, which will confirm that any JWT we

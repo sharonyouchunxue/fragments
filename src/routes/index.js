@@ -1,8 +1,10 @@
 // src/routes/index.js
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const express = require('express');
 
 // version and author from package.json
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { version, author } = require('../../package.json');
 
 // Create a router that we can use to mount our API
@@ -50,9 +52,11 @@ app.get('/', (req, res) => {
 
 // modifications to src/routes/index.js
 // Our authorization middleware
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { authenticate } = require('../authentication');
 /**
  * Expose all of our API routes on /v1/* to include an API version.
  * Protect them all so you have to be authenticated in order to access.
  */
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 router.use(`/v1`, authenticate(), require('./api'));
