@@ -28,7 +28,7 @@ const app = express();
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const passport = require('passport');
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const authorization = require('./authentication');
+const authorization = require('./authorization');
 // Use gzip/deflate compression middleware
 app.use(compression());
 
