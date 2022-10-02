@@ -58,7 +58,6 @@ app.use(compression());
 // Define our routes
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 app.use('/', require('./routes'));
-
 // Add 404 middleware to handle any requests for resources that can't be found
 app.use((req, res) => {
   res.status(404).json({

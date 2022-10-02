@@ -20,6 +20,7 @@ const app = express();
  * Define a simple health check route. If the server is running
  * we'll respond with a 200 OK.  If not, the server isn't healthy.
  */
+
 router.get('/', (req, res) => {
   // Client's shouldn't cache this response (always request it fresh)
   res.setHeader('Cache-Control', 'no-cache');
@@ -34,6 +35,8 @@ router.get('/', (req, res) => {
 });
 
 module.exports = router;
+
+
 
 app.get('/', (req, res) => {
     // Clients shouldn't cache this response (always request it fresh)
